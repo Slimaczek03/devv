@@ -7,3 +7,17 @@ on:
     branches:
     - main
   workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: step 1
+      uses: action/checkout@v3
+    - name: step 2
+      uses: actions/setup-node@v2
+      with:
+        node version: "14.x"
+    - name: instalacja dependencji
+      run: npm install
+    - name: uruchomienie testow
+      run: npm test
